@@ -1,135 +1,132 @@
 import os
+import csv
 from datetime import datetime
 
 # Cria a pasta "Tabelas" se não existir
 if not os.path.exists("Tabelas"):
     os.makedirs("Tabelas")
 
-# Caminhos para os arquivos das tabelas
-TABELA_FRASES = "Tabelas/frases.txt"
-TABELA_SENSACOES = "Tabelas/sensacoes.txt"
-TABELA_CONTEXTO = "Tabelas/contexto.txt"
-TABELA_RESPOSTAS = "Tabelas/respostas.txt"
-TABELA_APRENDIZADO = "Tabelas/aprendizado.txt"
-TABELA_PALAVRAS = "Tabelas/palavras.txt"
-TABELA_QUEMSOU = "Tabelas/quemsou.txt"
+# Caminhos para os arquivos das tabelas (agora em CSV)
+TABELA_FRASES = "Tabelas/frases.csv"
+TABELA_SENSACOES = "Tabelas/sensacoes.csv"
+TABELA_CONTEXTO = "Tabelas/contexto.csv"
+TABELA_RESPOSTAS = "Tabelas/respostas.csv"
+TABELA_APRENDIZADO = "Tabelas/aprendizado.csv"
+TABELA_PALAVRAS = "Tabelas/palavras.csv"
+TABELA_QUEMSOU = "Tabelas/quemsou.csv"
 
-# Função para criar uma tabela se não existir
+# Função para criar uma tabela CSV se não existir
 def criar_tabela(caminho, cabecalho):
     if not os.path.exists(caminho):
-        with open(caminho, "w", encoding="utf-8") as arquivo:
-            arquivo.write(cabecalho + "\n")
+        with open(caminho, "w", newline="", encoding="utf-8") as arquivo_csv:
+            escritor_csv = csv.writer(arquivo_csv)
+            escritor_csv.writerow(cabecalho)
 
-# Cria as tabelas com seus cabeçalhos
-criar_tabela(TABELA_FRASES, "id\tfrase\tpeso\torigem\tdata_cadastro")
-criar_tabela(TABELA_SENSACOES, "id\temocao\tvalor\tdata_atualizacao")
-criar_tabela(TABELA_CONTEXTO, "id\tid_frase\tresposta_sugerida\tdata")
-criar_tabela(TABELA_RESPOSTAS, "id\tid_frase\tresposta\tconfianca")
-criar_tabela(TABELA_APRENDIZADO, "id\tid_frase\tnovo_peso\tconfianca_nova\tdata")
-criar_tabela(TABELA_PALAVRAS, "palavra\tpeso")
-criar_tabela(TABELA_QUEMSOU, "id\tatributo\tvalor\tpeso\torigem\tdata_cadastro")
+# Cria as tabelas CSV com seus cabeçalhos
+criar_tabela(TABELA_FRASES, ["id", "frase", "peso", "origem", "data_cadastro"])
+criar_tabela(TABELA_SENSACOES, ["id", "emocao", "valor", "data_atualizacao"])
+criar_tabela(TABELA_CONTEXTO, ["id", "id_frase", "resposta_sugerida", "data"])
+criar_tabela(TABELA_RESPOSTAS, ["id", "id_frase", "resposta", "confianca"])
+criar_tabela(TABELA_APRENDIZADO, ["id", "id_frase", "novo_peso", "confianca_nova", "data"])
+criar_tabela(TABELA_PALAVRAS, ["palavra", "peso"])
+criar_tabela(TABELA_QUEMSOU, ["id", "atributo", "valor", "peso", "origem", "data_cadastro"])
 
-# Função para adicionar uma nova frase à tabela de frases
+# Função para adicionar uma nova frase à tabela de frases (CSV)
 def adicionar_frase(frase, peso, origem):
-    with open(TABELA_FRASES, "a", encoding="utf-8") as arquivo:
-        # Gera o próximo ID
-        if os.path.getsize(TABELA_FRASES) == 0:
-            id_novo = 1
-        else:
-            id_novo = sum(1 for _ in open(TABELA_FRASES))  # Conta as linhas existentes
+    with open(TABELA_FRASES, "a", newline="", encoding="utf-8") as arquivo_csv:
+        escritor_csv = csv.writer(arquivo_csv)
+        id_novo = contar_linhas_csv(TABELA_FRASES) + 1
         data = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        arquivo.write(f"{id_novo}\t{frase}\t{peso}\t{origem}\t{data}\n")
-    return id_novo  # Retorna o ID gerado
+        escritor_csv.writerow([id_novo, frase, peso, origem, data])
+    return id_novo
 
-# Função para adicionar uma nova sensação à tabela de sensações
+# Função para adicionar uma nova sensação à tabela de sensações (CSV)
 def adicionar_sensacao(emocao, valor):
-    with open(TABELA_SENSACOES, "a", encoding="utf-8") as arquivo:
-        # Gera o próximo ID
-        if os.path.getsize(TABELA_SENSACOES) == 0:
-            id_novo = 1
-        else:
-            id_novo = sum(1 for _ in open(TABELA_SENSACOES))
+    with open(TABELA_SENSACOES, "a", newline="", encoding="utf-8") as arquivo_csv:
+        escritor_csv = csv.writer(arquivo_csv)
+        id_novo = contar_linhas_csv(TABELA_SENSACOES) + 1
         data = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        arquivo.write(f"{id_novo}\t{emocao}\t{valor}\t{data}\n")
+        escritor_csv.writerow([id_novo, emocao, valor, data])
 
-# Função para adicionar um novo contexto à tabela de contexto
+# Função para adicionar um novo contexto à tabela de contexto (CSV)
 def adicionar_contexto(id_frase, resposta_sugerida):
-    with open(TABELA_CONTEXTO, "a", encoding="utf-8") as arquivo:
-        # Gera o próximo ID
-        if os.path.getsize(TABELA_CONTEXTO) == 0:
-            id_novo = 1
-        else:
-            id_novo = sum(1 for _ in open(TABELA_CONTEXTO))
+    with open(TABELA_CONTEXTO, "a", newline="", encoding="utf-8") as arquivo_csv:
+        escritor_csv = csv.writer(arquivo_csv)
+        id_novo = contar_linhas_csv(TABELA_CONTEXTO) + 1
         data = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        arquivo.write(f"{id_novo}\t{id_frase}\t{resposta_sugerida}\t{data}\n")
+        escritor_csv.writerow([id_novo, id_frase, resposta_sugerida, data])
 
-# Função para adicionar uma nova resposta à tabela de respostas
+# Função para adicionar uma nova resposta à tabela de respostas (CSV)
 def adicionar_resposta(id_frase, resposta, confianca):
-    with open(TABELA_RESPOSTAS, "a", encoding="utf-8") as arquivo:
-        # Gera o próximo ID
-        if os.path.getsize(TABELA_RESPOSTAS) == 0:
-            id_novo = 1
-        else:
-            id_novo = sum(1 for _ in open(TABELA_RESPOSTAS))
-        arquivo.write(f"{id_novo}\t{id_frase}\t{resposta}\t{confianca}\n")
+    with open(TABELA_RESPOSTAS, "a", newline="", encoding="utf-8") as arquivo_csv:
+        escritor_csv = csv.writer(arquivo_csv)
+        id_novo = contar_linhas_csv(TABELA_RESPOSTAS) + 1
+        escritor_csv.writerow([id_novo, id_frase, resposta, confianca])
 
-# Função para adicionar um novo registro de aprendizado
+# Função para adicionar um novo registro de aprendizado (CSV)
 def adicionar_aprendizado(id_frase, novo_peso, confianca_nova):
-    with open(TABELA_APRENDIZADO, "a", encoding="utf-8") as arquivo:
-        # Gera o próximo ID
-        if os.path.getsize(TABELA_APRENDIZADO) == 0:
-            id_novo = 1
-        else:
-            id_novo = sum(1 for _ in open(TABELA_APRENDIZADO))
+    with open(TABELA_APRENDIZADO, "a", newline="", encoding="utf-8") as arquivo_csv:
+        escritor_csv = csv.writer(arquivo_csv)
+        id_novo = contar_linhas_csv(TABELA_APRENDIZADO) + 1
         data = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        arquivo.write(f"{id_novo}\t{id_frase}\t{novo_peso}\t{confianca_nova}\t{data}\n")
+        escritor_csv.writerow([id_novo, id_frase, novo_peso, confianca_nova, data])
 
-# Função para adicionar uma nova palavra à tabela de palavras
+# Função para adicionar uma nova palavra à tabela de palavras (CSV)
 def adicionar_palavra(palavra, peso):
-    with open(TABELA_PALAVRAS, "a", encoding="utf-8") as arquivo:
-        arquivo.write(f"{palavra}\t{peso}\n")
+    with open(TABELA_PALAVRAS, "a", newline="", encoding="utf-8") as arquivo_csv:
+        escritor_csv = csv.writer(arquivo_csv)
+        escritor_csv.writerow([palavra, peso])
 
-# Função para ler todas as linhas de uma tabela
+# Função para ler todas as linhas de uma tabela CSV
 def ler_tabela(caminho):
     if not os.path.exists(caminho) or os.path.getsize(caminho) == 0:
-        return []  # Retorna uma lista vazia se o arquivo não existir ou estiver vazio
-    with open(caminho, "r", encoding="utf-8") as arquivo:
-        return [linha.strip().split("\t") for linha in arquivo.readlines()[1:]]  # Ignora o cabeçalho
+        return []
+    with open(caminho, "r", newline="", encoding="utf-8") as arquivo_csv:
+        leitor_csv = csv.reader(arquivo_csv)
+        next(leitor_csv, None)  # Ignora o cabeçalho
+        return list(leitor_csv)
 
-# Função para criar a tabela "quemsou" se não existir
+# Função para criar a tabela "quemsou" se não existir (CSV)
 def criar_tabela_quemsou():
     if not os.path.exists(TABELA_QUEMSOU):
-        with open(TABELA_QUEMSOU, "w", encoding="utf-8") as arquivo:
-            arquivo.write("id\tatributo\tvalor\tpeso\torigem\tdata_cadastro\n")
-        
-        # Adiciona os dados iniciais
+        criar_tabela(TABELA_QUEMSOU, ["id", "atributo", "valor", "peso", "origem", "data_cadastro"])
         adicionar_quemsou("nome", "Jurema", 1, "sistema")
         adicionar_quemsou("idade", "23/02/2025 21:26", 1, "sistema")
         adicionar_quemsou("criador", "Lucas Ramalho", 1, "sistema")
         adicionar_quemsou("quem_sou", "uma IA", 1, "sistema")
 
-# Função para adicionar um novo registro à tabela "quemsou"
+# Função para adicionar um novo registro à tabela "quemsou" (CSV)
 def adicionar_quemsou(atributo, valor, peso, origem):
-    with open(TABELA_QUEMSOU, "a", encoding="utf-8") as arquivo:
-        # Gera o próximo ID
-        if os.path.getsize(TABELA_QUEMSOU) == 0:
-            id_novo = 1
-        else:
-            id_novo = sum(1 for _ in open(TABELA_QUEMSOU))  # Conta as linhas existentes
+    """Adiciona um novo registro à tabela "quemsou" se o atributo não existir."""
+    registros = ler_quemsou()  # Lê todos os registros da tabela
+    for linha in registros:
+        if len(linha) >= 2 and linha[1] == atributo:
+            # O atributo já existe, então não faz nada
+            return
+
+    # O atributo não existe, então adiciona um novo registro
+    with open(TABELA_QUEMSOU, "a", newline="", encoding="utf-8") as arquivo_csv:
+        escritor_csv = csv.writer(arquivo_csv)
+        id_novo = contar_linhas_csv(TABELA_QUEMSOU) + 1
         data = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        arquivo.write(f"{id_novo}\t{atributo}\t{valor}\t{peso}\t{origem}\t{data}\n")
+        escritor_csv.writerow([id_novo, atributo, valor, peso, origem, data])
 
-# Função para ler a tabela "quemsou"
+# Função para ler a tabela "quemsou" (CSV)
 def ler_quemsou():
-    if not os.path.exists(TABELA_QUEMSOU) or os.path.getsize(TABELA_QUEMSOU) == 0:
-        return []  # Retorna uma lista vazia se o arquivo não existir ou estiver vazio
-    with open(TABELA_QUEMSOU, "r", encoding="utf-8") as arquivo:
-        return [linha.strip().split("\t") for linha in arquivo.readlines()[1:]]  # Ignora o cabeçalho
+    return ler_tabela(TABELA_QUEMSOU)
 
-# Função para buscar um atributo na tabela "quemsou"
+# Função para buscar um atributo na tabela "quemsou" (CSV)
 def buscar_quemsou(atributo):
     registros = ler_quemsou()
     for linha in registros:
-        if len(linha) >= 3 and linha[1] == atributo:  # Verifica se o atributo existe
-            return linha[2]  # Retorna o valor do atributo
-    return None  # Retorna None se o atributo não for encontrado
+        if len(linha) >= 3 and linha[1] == atributo:
+            return linha[2]
+    return None
+
+# Função auxiliar para contar o número de linhas em um arquivo CSV
+def contar_linhas_csv(caminho):
+    if not os.path.exists(caminho) or os.path.getsize(caminho) == 0:
+        return 0
+    with open(caminho, "r", newline="", encoding="utf-8") as arquivo_csv:
+        leitor_csv = csv.reader(arquivo_csv)
+        return sum(1 for linha in leitor_csv) - 1  # Subtrai 1 para ignorar o cabeçalho

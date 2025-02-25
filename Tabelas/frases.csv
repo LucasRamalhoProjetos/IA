@@ -1,0 +1,78 @@
+id,frase,peso,origem,data_cadastro
+1,olá,0.5,humano,2025-02-23 22:20:43
+2,olá,0.6,humano,2025-02-23 22:20:52
+3,estou bem! e voce?,0.5,humano,2025-02-23 22:21:02
+4,estou bem! e voce?,0.8,humano,2025-02-23 22:21:27
+5,nome,0.5,humano,2025-02-23 22:25:31
+6,nome,1.0,humano,2025-02-23 22:25:35
+7,olá,0.5,humano,2025-02-23 22:40:19
+8,bem! e voce?,0.5,humano,2025-02-23 22:40:27
+9,bem! e voce?,1,humano,2025-02-23 22:40:52
+10,seu nome?,0.5,humano,2025-02-23 22:41:04
+11,seu nome?,1,humano,2025-02-23 22:41:21
+12,Seu nome é Jurema,0.5,humano,2025-02-23 22:41:31
+13,Seu nome é Jurema,1,humano,2025-02-23 22:41:51
+14,olá Jurema,0.5,humano,2025-02-23 22:42:38
+15,olá Jurema,1,humano,2025-02-23 22:42:57
+16,seu nome,0.5,humano,2025-02-23 22:46:51
+17,seu nome,1,humano,2025-02-23 22:47:12
+18,olá,0.5,humano,2025-02-23 22:48:49
+19,olá,0.9,humano,2025-02-23 22:48:59
+20,ola,0.5,humano,2025-02-23 22:53:31
+21,ola,1,humano,2025-02-23 22:53:41
+22,Julia,0.5,humano,2025-02-23 22:56:04
+23,Julia,0.9,humano,2025-02-23 22:56:29
+24,Jurema,0.5,humano,2025-02-23 22:56:31
+25,Jurema,1.0,humano,2025-02-23 22:57:04
+26,Jurema?,0.5,humano,2025-02-23 22:57:05
+27,Jurema?,0.8,humano,2025-02-23 22:57:34
+28,Olá Jurema,0.5,humano,2025-02-23 23:00:16
+29,Olá Jurema,0.8,humano,2025-02-23 23:00:26
+30,como esta hoje?,0.5,humano,2025-02-23 23:00:34
+31,como esta hoje?,0.8,humano,2025-02-23 23:00:57
+32,olá Jurema,0.5,humano,2025-02-23 23:09:32
+33,Seu nome é Jurema,0.5,humano,2025-02-23 23:09:43
+34,Seu nome é Jurema,0.5,humano,2025-02-23 23:10:34
+35,Seu nome é Jurema,1,humano,2025-02-23 23:10:57
+36,seu nome deve ser jurema aqui,0.5,humano,2025-02-23 23:11:20
+37,seu nome deve ser jurema aqui,0.8,humano,2025-02-23 23:11:39
+38,olá,0.5,humano,2025-02-23 23:11:49
+39,Jurema,0.5,humano,2025-02-23 23:13:28
+40,Sabe quem eu sou?,0.5,humano,2025-02-23 23:13:37
+41,Sabe quem eu sou?,0.0,humano,2025-02-23 23:13:49
+42,Olá,0.5,humano,2025-02-23 23:16:06
+43,Olá,1,humano,2025-02-23 23:16:15
+44,bem,0.5,humano,2025-02-23 23:16:23
+45,bem,1.0,humano,2025-02-23 23:16:50
+46,fale em portugues,0.5,humano,2025-02-23 23:20:02
+47,fale em portugues,0.8,humano,2025-02-23 23:20:13
+48,quero que lembre que seu nome e Jurema,0.5,humano,2025-02-23 23:20:27
+49,quero que lembre que seu nome e Jurema,0.7,humano,2025-02-23 23:20:40
+50,olá,0.5,humano,2025-02-23 23:21:32
+51,olá,0.8,humano,2025-02-23 23:21:42
+52,nome,0.5,humano,2025-02-23 23:22:35
+53,olá,0.5,humano,2025-02-23 23:24:21
+54,ola,0.5,humano,2025-02-23 23:24:43
+55,olá,0.5,humano,2025-02-23 23:25:04
+56,olá,0.8,humano,2025-02-23 23:25:17
+57,Jurema?,0.5,humano,2025-02-23 23:27:20
+58,olá,0.5,humano,2025-02-23 23:29:36
+59,bem! e voce?,0.5,humano,2025-02-23 23:29:53
+60,muito bem,0.5,humano,2025-02-23 23:30:31
+61,muito bem,0.6,humano,2025-02-23 23:30:41
+62,poce sabe programar em python?,0.5,humano,2025-02-23 23:36:05
+63,poce sabe programar em python?,0.8,humano,2025-02-23 23:37:12
+64,"modifique para mim esse codigo, para que nao salve valos repetidos
+def adicionar_quemsou(atributo, valor, peso, origem):
+    with open(TABELA_QUEMSOU, ""a"", newline="""", encoding=""utf-8"") as arquivo_csv:
+        escritor_csv = csv.writer(arquivo_csv)
+        id_novo = contar_linhas_csv(TABELA_QUEMSOU) + 1
+        data = datetime.now().strftime(""%Y-%m-%d %H:%M:%S"")
+        escritor_csv.writerow([id_novo, atributo, valor, peso, origem, data])",0.5,humano,2025-02-23 23:37:59
+65,"modifique para mim esse codigo, para que nao salve valos repetidos
+def adicionar_quemsou(atributo, valor, peso, origem):
+    with open(TABELA_QUEMSOU, ""a"", newline="""", encoding=""utf-8"") as arquivo_csv:
+        escritor_csv = csv.writer(arquivo_csv)
+        id_novo = contar_linhas_csv(TABELA_QUEMSOU) + 1
+        data = datetime.now().strftime(""%Y-%m-%d %H:%M:%S"")
+        escritor_csv.writerow([id_novo, atributo, valor, peso, origem, data])",0.9,humano,2025-02-23 23:38:47
