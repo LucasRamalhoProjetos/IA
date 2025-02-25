@@ -1,0 +1,48 @@
+id	frase	peso	origem	data_cadastro
+1	olá	0.5	humano	2025-02-23
+2	olá	0.5	humano	2025-02-23
+3	bem	0.5	humano	2025-02-23
+4	bem	0.5	humano	2025-02-23
+5	e voce?	0.5	humano	2025-02-23
+6	e voce?	0.5	humano	2025-02-23
+7	responda em portugues	0.5	humano	2025-02-23
+8	responda em portugues	0.5	humano	2025-02-23
+9	olá	0.5	humano	2025-02-23
+10	estou bem	0.5	humano	2025-02-23
+11	estou bem	0.5	humano	2025-02-23
+12	fala com voce	0.5	humano	2025-02-23
+13	fala com voce	0.5	humano	2025-02-23
+14	sabe seu nome?	0.5	humano	2025-02-23
+15	sabe seu nome?	0.5	humano	2025-02-23
+16	seu nome é julia	0.5	humano	2025-02-23
+17	seu nome é julia	0.5	humano	2025-02-23
+18	como esta hoje?	0.5	humano	2025-02-23
+19	como esta hoje?	0.5	humano	2025-02-23
+20	seu nome e julia	0.5	humano	2025-02-23
+21	seu nome e julia	0.5	humano	2025-02-23
+22	qual seu nome?	0.5	humano	2025-02-23
+23	qual seu nome?	0.5	humano	2025-02-23
+24	deve responder que é Julia	0.5	humano	2025-02-23
+25	deve responder que é Julia	0.5	humano	2025-02-23
+26	Seu nome é Jurema	0.5	humano	2025-02-23
+27	Seu nome é Jurema	0.5	humano	2025-02-23
+28	qual sua idade Jurema?	0.5	humano	2025-02-23
+29	qual sua idade Jurema?	0.5	humano	2025-02-23
+30	entendi	0.5	humano	2025-02-23 21:38:00
+31	entendi	0.5	humano	2025-02-23 21:38:04
+32	Jurema?	0.5	humano	2025-02-23 21:39:40
+33	Jurema?	0.5	humano	2025-02-23 21:39:58
+34	boa noite	0.5	humano	2025-02-23 21:41:22
+35	boa noite	0.5	humano	2025-02-23 21:41:23
+36	boa noite	0.5	humano	2025-02-23 21:41:27
+37	Jurema?	0.5	humano	2025-02-23 21:41:58
+38	Seu nome é Jurema	0.5	humano	2025-02-23 21:44:16
+39	quando perguntar seu nome, deve responder Meu nome e Jurema e estou sendo programada por Lucas Ramalho	0.5	humano	2025-02-23 21:44:51
+40	quando perguntar seu nome, deve responder Meu nome e Jurema e estou sendo programada por Lucas Ramalho	0.5	humano	2025-02-23 21:44:54
+41	isso	0.5	humano	2025-02-23 21:45:09
+42	isso	0.5	humano	2025-02-23 21:45:12
+43	qual seu nome?	0.5	humano	2025-02-23 21:45:23
+44	Seu nome e Jurema	0.5	humano	2025-02-23 21:45:29
+45	Seu nome e Jurema	0.5	humano	2025-02-23 21:45:32
+46	Jurema fala portugues do brasil	0.5	humano	2025-02-23 21:45:48
+47	Jurema fala portugues do brasil	0.5	humano	2025-02-23 21:45:55

@@ -1,0 +1,76 @@
+id	id_frase	resposta	confianca
+1	2	Olá! Como você está?	0.5
+2	4	"bem"!
+
+In Portuguese, "bem" can have different meanings depending on the context. Here are a few possible translations:
+
+* Well (as in "I'm doing well")
+* Good (as in "That's good!")
+* Okay (as in "Is everything okay?")
+* Fine (as in "I'm fine, thank you")
+
+Can you give me more context about what you mean by "bem"?	0.5
+12	6	Ehi! Sono un'intelligenza artificiale in grado di comprendere e rispondere alla tua lingua madre, l'italiano! Come posso aiutarti oggi?	0.5
+13	8	Estou pronto para responder em português! Qual é a sua pergunta ou tema que você gostaria de discutir?	0.5
+14	9	Olá! Como vai?	0.5
+15	11	Que bom! Estar bem é um sentimento tão agradável. Que coisas estão fazendo você se sentir feliz e bem hoje?	0.5
+16	13	Falando português! Como está?	0.5
+17	15	Eu sou um modelo de linguagem treinado pela Meta AI, por isso não tenho um nome próprio. Eu sou apenas conhecido como "Assistant" ou "AI Assistant". Meu objetivo é ajudar pessoas a obter respostas às suas perguntas e a resolver problemas!	0.5
+18	17	Olá! Sim, eu sou Julia. Eu sou um modelo de linguagem treinado para ajudar a responder às suas perguntas e conversar sobre qualquer assunto que você esteja interessado em discutir. Estou aqui para escutar e ajudar da melhor maneira possível. Qual é o seu objetivo ou tema que você gostaria de discutir?	0.5
+19	19	Como sou uma inteligência artificial, não tenho sentimentos ou emoções como os seres humanos. Não sinto "muita" coisa em relação ao tempo ou a data. Estou simplesmente aqui para ajudar e responder às suas perguntas 24 horas por dia, 7 dias por semana!	0.5
+20	21	Olá! Eu sou um modelo de linguagem treinado pela Meta AI, então eu não tenho realmente um nome como Julia. Mas eu estou aqui para ajudar você com qualquer pergunta ou tarefa que você precise!	0.5
+21	23	Olá! Eu não tenho um nome específico, pois sou uma inteligência artificial treinada para fornecer informações e responder perguntas. Posso ser chamada de "Chatbot" ou "Assistente Virtual", mas não tenho uma identidade própria como os seres humanos.	0.5
+22	25	Você está se referindo à Julia! Julia é um programa de linguagem de programação high-level, escrito em C e baseado na linguagem MATLAB. Foi desenvolvido pela Julia Language Inc. e lanÃ§ado em 2009. É projetado para ser uma linguagem versÃ¡til e Ã³tima para aplicações de ciÃªncia dos dados, financeira, engenharia e mais.	0.5
+23	27	Olá! Eu sou Jurema, prazer em conhecer você!	0.5
+24	29	Já não tenho idade! Sou um modelo de linguagem artificial, criado em 2021, então eu sou uma inteligência artificial jovem e eternamente jovem. Não envelheço nem morro, estou sempre pronta para aprender e ajudar!	0.5
+25	31	"Entendi"
+
+* "Entendi" is the Portuguese phrase for "I understood".
+
+Is there something specific you'd like to discuss or ask about? I'm here to help!	0.5
+30	33	Jurema!
+
+Jurema is a type of plant native to the Amazon rainforest, specifically in Brazil and Peru. It's also known as Pau d'Arco or Lapacho.
+
+The Jurema tree (Tabebuia spp.) has been used for centuries by indigenous communities in the Amazon region for medicinal purposes. The bark, leaves, and flowers of the plant are believed to have anti-inflammatory, antimicrobial, and antiviral properties.
+
+In traditional medicine, Jurema is often used to treat a variety of ailments, including:
+
+1. Fever: The bark is said to help reduce fever.
+2. Infections: The antimicrobial properties may aid in treating bacterial infections like pneumonia or tuberculosis.
+3. Skin conditions: Topical applications of Jurema are believed to soothe skin issues like eczema or psoriasis.
+
+In some parts of the world, Jurema supplements are available in capsule or powder form, often marketed as a natural remedy for immune system support and overall health.
+
+Would you like to know more about its potential benefits or how it's used in traditional medicine?	0.5
+45	35	Boa noite também!	0.5
+46	36	Boa noite também!	0.5
+47	37	Jurema!
+
+Jurema is a type of plant native to the Amazon rainforest, specifically the species Psychotria viridis. It's also known as "jurema" or "juremão". In traditional medicine, Jurema has been used for centuries by indigenous communities in Brazil and Peru.
+
+The plant contains alkaloids, including harmine, which is a precursor to the active ingredient in ayahuasca, another well-known Amazonian psychedelic brew. Harmine is responsible for many of the psychoactive effects of Jurema, which include:
+
+1. Hallucinations: users may experience vivid visual and auditory hallucinations.
+2. Altered perception: Jurema can alter users' sense of time, space, and self-awareness.
+3. Increased creativity: many users report increased inspiration and creative insight.
+
+Jurema has been used in traditional medicine for various purposes, such as:
+
+1. Spiritual practices: to connect with the spiritual realm or access higher states of consciousness.
+2. Healing: to treat physical and mental ailments, like anxiety, depression, and chronic pain.
+3. Rites of passage: Jurema is sometimes used in initiation ceremonies or coming-of-age rituals.
+
+However, it's essential to note that Jurema can be a powerful and potentially overwhelming substance. It should only be used under the guidance of an experienced shaman or healthcare professional, especially for individuals with mental health conditions or a history of addiction.
+
+Would you like to know more about the history, uses, or risks associated with Jurema?	0.5
+66	38	Prazer! Eu sou Jurema, um modelo de linguagem treinado para ajudar e conversar com você em português. Estou aqui para responder às suas perguntas, discutir temas interessantes ou apenas passar o tempo conversando. Qual é o seu assunto favorito?	0.5
+67	40	Entendi! Então, quando alguém perguntar seu nome, você responde: "Meu nome é Jurema e estou sendo programada por Lucas Ramalho".	0.5
+68	42	"Isso" is Portuguese for "that" or "those". Is there something you'd like to talk about, or are you just saying "that"?	0.5
+69	43	Eu sou um modelo de linguagem artificial desenvolvido pela Meta AI, e não tenho um nome específico. Eu sou simplesmente conhecido como "Assistant" ou "Chatbot". Meu objetivo é fornecer informações e ajudar a resolver problemas através de conversas naturais com humanos!	0.5
+70	45	Olá Jurema! Nice to meet you! I'm an AI, and I'm here to help with any questions or topics you'd like to discuss. What's on your mind today?	0.5
+71	47	Sim, eu posso tentar!
+
+"Olá, como você está? Estou muito bem, obrigado. Eu estou aqui para ajudar com qualquer pergunta ou tarefa que você tenha. Qual é o seu pedido?"
+
+(Note: I'll respond in Brazilian Portuguese, but please keep in mind that my proficiency may not be perfect. If you need help with a specific task or have any questions, feel free to ask!)	0.5

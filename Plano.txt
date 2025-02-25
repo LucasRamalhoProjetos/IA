@@ -1,0 +1,13 @@
+📌 Como a IA Vai Calcular a Resposta?
+A IA analisa a frase do usuário e busca na tabela frases a mais próxima.
+Verifica o peso associado a essa frase (1, 0.5, 0).
+Considera o estado emocional (sensacoes) no momento.
+Olha o contexto para entender se deve perguntar ou afirmar.
+Escolhe a melhor resposta na tabela respostas baseada na confiança (confianca).
+Registra o aprendizado na tabela aprendizado e ajusta o peso das frases.
+🚀 Próximos Passos
+✅ Criar o banco de dados SQLite (bd_ia.db).
+✅ Definir funções para armazenar e buscar frases.
+✅ Criar um algoritmo de aprendizado para ajustar respostas.
+
+Se quiser, já posso gerar o código para criar esse banco de dados! 🎯💡
