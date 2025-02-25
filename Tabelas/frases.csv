@@ -76,3 +76,94 @@ def adicionar_quemsou(atributo, valor, peso, origem):
         id_novo = contar_linhas_csv(TABELA_QUEMSOU) + 1
         data = datetime.now().strftime(""%Y-%m-%d %H:%M:%S"")
         escritor_csv.writerow([id_novo, atributo, valor, peso, origem, data])",0.9,humano,2025-02-23 23:38:47
+66,olá,0.5,humano,2025-02-24 01:26:13
+67,olá,0.8,humano,2025-02-24 01:26:26
+68,olá,0.5,humano,2025-02-24 01:26:31
+69,olá,0.5,humano,2025-02-24 01:35:25
+70,olá,0.7,humano,2025-02-24 01:35:42
+71,bem! e voce?,0.5,humano,2025-02-24 01:35:53
+72,bem! e voce?,1,humano,2025-02-24 01:36:16
+73,Qual seu nome?,0.5,humano,2025-02-24 01:36:32
+74,Qual seu nome?,1,humano,2025-02-24 01:36:57
+75,Seu nome é Jurema,0.5,humano,2025-02-24 01:37:29
+76,voce sabe meu nome?,0.5,humano,2025-02-24 01:38:45
+77,voce sabe meu nome?,0.8,humano,2025-02-24 01:39:11
+78,qual é seu nome?,0.5,humano,2025-02-24 01:40:27
+79,qual é seu nome?,1,humano,2025-02-24 01:40:48
+80,qual é seu nome?,0.5,humano,2025-02-24 01:41:07
+81,olá,0.5,humano,2025-02-24 01:42:02
+82,qual seu nome,0.5,humano,2025-02-24 01:48:36
+83,qual seu nome,1,humano,2025-02-24 01:48:55
+84,olá,0.5,humano,2025-02-24 01:51:39
+85,olá,0.9,humano,2025-02-24 01:51:53
+86,bem! e voce Jurema?,0.5,humano,2025-02-24 01:53:34
+87,bem! e voce Jurema?,1,humano,2025-02-24 01:53:54
+88,Jurema,0.5,humano,2025-02-24 02:01:57
+89,Jurema,1.0,humano,2025-02-24 02:02:33
+90,Olá,0.5,humano,2025-02-24 02:04:58
+91,Bem,0.5,humano,2025-02-24 02:05:04
+92,Bem,0.8,humano,2025-02-24 02:05:38
+93,sim! vamos falar em portugues,0.5,humano,2025-02-24 02:05:53
+94,sim! vamos falar em portugues,0.8,humano,2025-02-24 02:06:14
+95,qual é o seu nome?,0.5,humano,2025-02-24 02:06:53
+96,qual é o seu nome?,0.8,humano,2025-02-24 02:07:19
+97,quando eu perguntar seu nome deve responder Jurema,0.5,humano,2025-02-24 02:07:33
+98,quando eu perguntar seu nome deve responder Jurema,0.9,humano,2025-02-24 02:07:47
+99,qual é o seu nome?,0.5,humano,2025-02-24 02:08:05
+100,lembra que iria responder jurema?,0.5,humano,2025-02-24 02:08:17
+101,lembra que iria responder jurema?,1,humano,2025-02-24 02:08:39
+102,seu nome e jurema,0.5,humano,2025-02-24 02:08:53
+103,seu nome e jurema,1,humano,2025-02-24 02:09:10
+104,qual e o seu nome?,0.5,humano,2025-02-24 02:09:22
+105,qual e o seu nome?,0.9,humano,2025-02-24 02:09:45
+106,seu nome e jurema,0.5,humano,2025-02-24 02:09:55
+107,qual é seu nome?,0.5,humano,2025-02-24 02:12:18
+108,qual é seu nome?,0.8,humano,2025-02-24 02:12:38
+109,qual é o seu nome?,0.5,humano,2025-02-24 02:12:56
+110,qual é o seu nome?,1,humano,2025-02-24 02:13:13
+111,qual é o seu nome?,0.5,humano,2025-02-24 02:13:30
+112,qual é o seu nome?,0.5,humano,2025-02-24 02:13:47
+113,qual é o seu nome?,0.8,humano,2025-02-24 02:14:08
+114,qual é o seu nome?,0.5,humano,2025-02-24 02:14:24
+115,muito bem,0.5,humano,2025-02-24 02:14:30
+116,muito bem,0.5,humano,2025-02-24 02:15:01
+117,muito bem,0.9,humano,2025-02-24 02:15:11
+118,correto,0.5,humano,2025-02-24 02:15:50
+119,correto,0.8,humano,2025-02-24 02:16:20
+120,a,0.5,humano,2025-02-24 02:16:25
+121,a,1,humano,2025-02-24 02:16:41
+122,b,0.5,humano,2025-02-24 02:16:44
+123,b,0.6,humano,2025-02-24 02:16:55
+124,c,0.5,humano,2025-02-24 02:16:57
+125,c,0.0,humano,2025-02-24 02:17:10
+126,fale todas as letras do alfabeto,0.5,humano,2025-02-24 02:17:21
+127,fale todas as letras do alfabeto,0.8,humano,2025-02-24 02:17:35
+128,fale apenas em portugues,0.5,humano,2025-02-24 02:17:55
+129,fale apenas em portugues,1,humano,2025-02-24 02:18:09
+130,fale coisas para encinar a minha ia a falar,0.5,humano,2025-02-24 02:18:27
+131,fale coisas para encinar a minha ia a falar,0.8,humano,2025-02-24 02:19:49
+132,Jurema,0.5,humano,2025-02-24 02:30:18
+133,sua resposta esta errada,0.5,humano,2025-02-24 02:30:30
+134,sua resposta esta errada,1,humano,2025-02-24 02:30:54
+135,qual é o seu nome?,0.5,humano,2025-02-24 02:31:09
+136,qual é o seu nome?,1,humano,2025-02-24 02:31:35
+137,Jurema,0.5,humano,2025-02-24 02:32:22
+138,Jurema,0.5,humano,2025-02-24 02:32:59
+139,Olá Jurema?,0.5,humano,2025-02-24 14:11:18
+140,Olá Jurema?,0.9,humano,2025-02-24 14:11:52
+141,qual é o seu nome?,0.5,humano,2025-02-24 14:30:44
+142,qual é o seu nome?,0.5,humano,2025-02-24 14:31:42
+143,qual é o seu nome?,0.8,humano,2025-02-24 14:32:17
+144,qual é o seu nome?,0.5,humano,2025-02-24 14:32:36
+145,"Prazer em conhecê-la, Jurema!",0.5,humano,2025-02-24 14:33:12
+146,"Prazer em conhecê-la, Jurema!",0.6,humano,2025-02-24 14:33:26
+147,"Prazer em conhecê-la, Jurema!",0.5,humano,2025-02-24 14:33:55
+148,qua é o seu nome?,0.5,humano,2025-02-24 14:34:10
+149,qua é o seu nome?,0.8,humano,2025-02-24 14:34:26
+150,qua é o seu nome?,0.5,humano,2025-02-24 14:34:42
+151,Prazer em conhecela,0.5,humano,2025-02-24 14:34:56
+152,Prazer em conhecela,0.8,humano,2025-02-24 14:35:15
+153,Como formar frases em português?,0.5,humano,2025-02-24 14:35:58
+154,Como formar frases em português?,1.0,humano,2025-02-24 14:37:11
+155,oque é um nome?,0.5,humano,2025-02-24 14:37:35
+156,oque é um nome?,0.8,humano,2025-02-24 14:38:04

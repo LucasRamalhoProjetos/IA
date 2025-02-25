@@ -14,6 +14,7 @@ TABELA_RESPOSTAS = "Tabelas/respostas.csv"
 TABELA_APRENDIZADO = "Tabelas/aprendizado.csv"
 TABELA_PALAVRAS = "Tabelas/palavras.csv"
 TABELA_QUEMSOU = "Tabelas/quemsou.csv"
+TABELA_ALFABETO = "Tabelas/alfabeto.csv"  # Nova tabela para o alfabeto
 
 # Função para criar uma tabela CSV se não existir
 def criar_tabela(caminho, cabecalho):
@@ -30,6 +31,7 @@ criar_tabela(TABELA_RESPOSTAS, ["id", "id_frase", "resposta", "confianca"])
 criar_tabela(TABELA_APRENDIZADO, ["id", "id_frase", "novo_peso", "confianca_nova", "data"])
 criar_tabela(TABELA_PALAVRAS, ["palavra", "peso"])
 criar_tabela(TABELA_QUEMSOU, ["id", "atributo", "valor", "peso", "origem", "data_cadastro"])
+criar_tabela(TABELA_ALFABETO, ["letra", "tipo", "frequencia"])  # Cabeçalho para a tabela do alfabeto
 
 # Função para adicionar uma nova frase à tabela de frases (CSV)
 def adicionar_frase(frase, peso, origem):
@@ -130,3 +132,17 @@ def contar_linhas_csv(caminho):
     with open(caminho, "r", newline="", encoding="utf-8") as arquivo_csv:
         leitor_csv = csv.reader(arquivo_csv)
         return sum(1 for linha in leitor_csv) - 1  # Subtrai 1 para ignorar o cabeçalho
+    
+# Função para adicionar letras à tabela do alfabeto
+def adicionar_letra(letra, tipo, frequencia):
+    with open(TABELA_ALFABETO, "a", newline="", encoding="utf-8") as arquivo_csv:
+        escritor_csv = csv.writer(arquivo_csv)
+        escritor_csv.writerow([letra, tipo, frequencia])
+
+# Adiciona as letras do alfabeto à tabela
+alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+vogais = "AEIOU"
+for letra in alfabeto:
+    tipo = "vogal" if letra in vogais else "consoante"
+    frequencia = 0  # Inicializa a frequência como 0
+    adicionar_letra(letra, tipo, frequencia)

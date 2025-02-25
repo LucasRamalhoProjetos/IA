@@ -1,5 +1,4 @@
 import os
-import ollama
 from datetime import datetime
 from Tabelas import (
     ler_tabela,
@@ -13,20 +12,37 @@ from Tabelas import (
     TABELA_RESPOSTAS,
     criar_tabela_quemsou,
     buscar_quemsou,
-    adicionar_quemsou
+    adicionar_quemsou,
+    TABELA_ALFABETO,
 )
 import logging
 import re
-import numpy as np  # Importe a biblioteca NumPy
-import matplotlib.pyplot as plt  # Importe a biblioteca matplotlib
-import networkx as nx  # Importe a biblioteca networkx
+import numpy as np
+import matplotlib.pyplot as plt
+import networkx as nx
+import csv
+from nltk.corpus import stopwords
+from nltk.stem import SnowballStemmer
+import nltk
+nltk.download('stopwords')
+nltk.download('punkt')
 
-# Funções de neurônios
+# Baixar stopwords (se necessário)
+# import nltk
+# nltk.download('stopwords')
+
+# Funções de neurônios com ajuste dinâmico
 def neuronio(entradas, pesos, bias):
-    """Simula o comportamento de um neurônio artificial."""
+    """Simula o comportamento de um neurônio artificial com ajuste dinâmico."""
     soma_ponderada = np.dot(entradas, pesos) + bias
     saida = sigmoide(soma_ponderada)
     return saida
+
+def ajustar_pesos(pesos, bias, erro, taxa_aprendizado=0.1):
+    """Ajusta os pesos e o bias com base no erro."""
+    novos_pesos = [peso - taxa_aprendizado * erro for peso in pesos]
+    novo_bias = bias - taxa_aprendizado * erro
+    return novos_pesos, novo_bias
 
 def sigmoide(x):
     """Função de ativação sigmoide."""
@@ -38,119 +54,138 @@ def extrair_numeros(texto):
     numeros = [float(num) for num in re.findall(r"\d+\.\d+|\d+", texto)]
     return [min(max(num, 0), 1) for num in numeros]
 
-# Funções de interação com o Ollama
-def perguntar_ollama(texto):
-    """Pergunta ao Ollama e armazena dados da resposta."""
-    if not texto.strip():
-        return "Erro: Texto da pergunta está vazio."
+def preprocessar_texto(texto):
+    """Pré-processa o texto para análise."""
+    # Converter para minúsculas
+    texto = texto.lower()
+    
+    # Remover pontuação
+    texto = re.sub(r'[^\w\s]', '', texto)
+    
+    # Tokenização
+    palavras = texto.split()
+    
+    # Remover stopwords
+    stop_words = set(stopwords.words('portuguese'))  # Certifique-se de que o NLTK foi configurado
+    palavras = [palavra for palavra in palavras if palavra not in stop_words]
+    
+    # Stemming (reduzir palavras às suas raízes)
+    stemmer = SnowballStemmer('portuguese')  # Certifique-se de que o idioma está correto
+    palavras = [stemmer.stem(palavra) for palavra in palavras]
+    
+    return palavras
 
-    try:
-        logging.info(f"Perguntando ao Ollama: {texto}")
+def identificar_intencao(texto):
+    """Identifica a intenção por trás do texto."""
+    texto = texto.lower()
+    palavras = texto.split()  # Divide o texto em palavras
+    
+    if any(palavra in palavras for palavra in ["olá", "oi", "bom dia", "boa tarde", "boa noite"]):
+        return "saudacao"
+    elif any(palavra in palavras for palavra in ["ajuda", "socorro", "problema"]):
+        return "ajuda"
+    elif any(palavra in palavras for palavra in ["tempo", "clima", "previsão"]):
+        return "tempo"
+    elif any(palavra in palavras for palavra in ["quem", "é", "você", "fale", "sobre"]):
+        return "quem_sou_eu"
+    elif any(palavra in palavras for palavra in ["vogais", "consoantes", "letra", "comum"]):
+        return "alfabeto"
+    elif "hobby" in palavras:
+        return "hobby"
+    elif "cor" in palavras and "favorita" in palavras:
+        return "cor_favorita"
+    else:
+        return "desconhecido"
 
-        resposta = ollama.chat(model="llama3", messages=[{"role": "user", "content": texto}])
-        resposta_ia = resposta.get("message", {}).get("content", "").strip()
-        if not resposta_ia:
-            return "Erro: Resposta da IA está vazia."
+# Funções de processamento de texto com embeddings
+def identificar_letras(texto):
+    """Identifica as letras no texto e retorna informações sobre elas."""
+    letras_identificadas = []
+    for letra in texto.upper():
+        if letra.isalpha():  # Verifica se é uma letra
+            for linha in ler_tabela(TABELA_ALFABETO):
+                if linha[0] == letra:
+                    letras_identificadas.append({
+                        "letra": letra,
+                        "tipo": linha[1],
+                        "frequencia": int(linha[2])
+                    })
+                    break
+    return letras_identificadas
 
-        avaliacao = ollama.chat(
-            model="llama3",
-            messages=[{"role": "user", "content": f"Avalie a resposta: '{resposta_ia}'. Dê confiança (0 a 1) e peso (0 a 1)."}]
-        )
-        avaliacao_ia = avaliacao.get("message", {}).get("content", "").strip()
+def atualizar_frequencia_letras(texto):
+    """Atualiza a frequência das letras na tabela de alfabeto."""
+    letras = identificar_letras(texto)
+    linhas = ler_tabela(TABELA_ALFABETO)
+    
+    # Atualiza a frequência na memória
+    for letra_info in letras:
+        letra = letra_info["letra"]
+        for linha in linhas:
+            if linha[0] == letra:
+                linha[2] = str(int(linha[2]) + 1)  # Incrementa a frequência
+    
+    # Escreve as alterações no arquivo
+    with open(TABELA_ALFABETO, "w", newline="", encoding="utf-8") as arquivo_csv:
+        escritor_csv = csv.writer(arquivo_csv)
+        escritor_csv.writerow(["letra", "tipo", "frequencia"])  # Cabeçalho
+        escritor_csv.writerows(linhas)
 
-        valores = extrair_numeros(avaliacao_ia)
-        confianca = valores[0] if len(valores) > 0 else 0.5
-        peso = valores[1] if len(valores) > 1 else 0.5
+def responder_sobre_alfabeto(pergunta):
+    """Responde perguntas sobre o alfabeto."""
+    pergunta_lower = pergunta.lower()
+    
+    if "vogais" in pergunta_lower:
+        vogais = [linha for linha in ler_tabela(TABELA_ALFABETO) if linha[1] == "vogal"]
+        return f"As vogais são: {', '.join([linha[0] for linha in vogais])}."
+    
+    if "consoantes" in pergunta_lower:
+        consoantes = [linha for linha in ler_tabela(TABELA_ALFABETO) if linha[1] == "consoante"]
+        return f"As consoantes são: {', '.join([linha[0] for linha in consoantes])}."
+    
+    if "letra mais comum" in pergunta_lower:
+        letras = ler_tabela(TABELA_ALFABETO)
+        letra_mais_comum = max(letras, key=lambda x: int(x[2]))
+        return f"A letra mais comum é '{letra_mais_comum[0]}' com frequência {letra_mais_comum[2]}."
+    
+    return "Desculpe, não entendi sua pergunta sobre o alfabeto."
 
-        logging.info(f"Resposta: {resposta_ia} | Confiança: {confianca} | Peso: {peso}")
-
-        id_frase = adicionar_frase(texto, peso, "humano")
-        adicionar_resposta(id_frase, resposta_ia, confianca)
-        adicionar_contexto(id_frase, resposta_ia)
-        adicionar_sensacao("neutro", peso)
-        adicionar_aprendizado(id_frase, peso, confianca)
-
-        for palavra in set(texto.lower().split()):
-            adicionar_palavra(palavra, peso)
-
-        return resposta_ia
-    except Exception as e:
-        logging.error(f"Erro ao consultar o Ollama: {str(e)}", exc_info=True)
-        return f"Erro ao consultar o Ollama: {str(e)}"
-
-# Funções de processamento de texto
 def processar_texto(texto, origem="humano"):
-    """Processa a entrada do usuário, busca resposta na base, adapta-se e consulta o Ollama se necessário."""
+    """Processa a entrada do usuário com embeddings e contexto expandido."""
     criar_tabela_quemsou()
 
-    texto_lower = texto.lower()
+    # Pré-processamento do texto
+    palavras = preprocessar_texto(texto)
+    intencao = identificar_intencao(texto)
 
-    # Resposta "Quem Sou Eu?" expandida e personalizada
-    if any(pergunta in texto_lower for pergunta in ["quem é você", "quem sou eu", "fale sobre você"]):
+    # Respostas baseadas em intenção
+    if intencao == "saudacao":
+        return "Olá! Como posso ajudar?"
+    elif intencao == "ajuda":
+        return "Claro, no que posso ajudar?"
+    elif intencao == "tempo":
+        return "A previsão do tempo para hoje é ensolarada."
+    elif intencao == "quem_sou_eu":
         nome = buscar_quemsou("nome") or "Jurema"
         versao = buscar_quemsou("versao") or "1.0"
         objetivos = buscar_quemsou("objetivos") or "auxiliar e aprender"
         habilidades = buscar_quemsou("habilidades") or "processamento de linguagem natural"
         interesses = buscar_quemsou("interesses") or "aprender sobre o mundo"
         return f"Eu sou {nome}, versão {versao}. Meus objetivos são {objetivos} e minhas habilidades incluem {habilidades}. Também tenho interesse em {interesses}."
-
-    # Aprendizado de novos atributos
-    if "meu hobby é" in texto_lower:
+    elif intencao == "hobby":
         hobby_usuario = texto.split("meu hobby é")[-1].strip()
         adicionar_quemsou("hobby_usuario", hobby_usuario, 1, "usuario")
         return f"Entendi, seu hobby é {hobby_usuario}."
-
-    if "minha cor favorita é" in texto_lower:
+    elif intencao == "cor_favorita":
         cor_favorita_usuario = texto.split("minha cor favorita é")[-1].strip()
         adicionar_quemsou("cor_favorita_usuario", cor_favorita_usuario, 1, "usuario")
         return f"Entendi, sua cor favorita é {cor_favorita_usuario}."
-
-    # Memória de conversação (simples - pode ser expandida)
-    if hasattr(processar_texto, "ultima_pergunta"):
-        if "sim" in texto_lower:
-            return "Ótimo!"
-        del processar_texto.ultima_pergunta
-
-    # Perguntas de acompanhamento
-    if "você gosta de" in texto_lower:
-        processar_texto.ultima_pergunta = texto
-        return "Sim, gosto. E você?"
-
-    # Busca de respostas na base de dados (usando neurônio)
-    frases = {linha[1]: int(linha[0]) for linha in ler_tabela(TABELA_FRASES)}
-    id_frase = frases.get(texto, adicionar_frase(texto, 0.5, origem))
-
-    respostas = {}
-    for linha in ler_tabela(TABELA_RESPOSTAS):
-        if len(linha) >= 4:
-            try:
-                respostas[int(linha[1])] = (linha[2], float(linha[3]))
-            except ValueError:
-                print(f"Erro: Valor inválido encontrado na linha: {linha}")
-        else:
-            print(f"Aviso: Linha incompleta encontrada: {linha}")
-
-    melhor_resposta, maior_confianca = respostas.get(id_frase, (None, 0))
-
-    # Uso da rede neural para decidir se usa a resposta da base ou o Ollama
-    entradas = [len(texto), maior_confianca, id_frase]  # Entradas fictícias
-    pesos = [0.1, 0.2, 0.3]  # Pesos aleatórios
-    bias = 0.5  # Bias aleatório
-    saida_neuronio = neuronio(entradas, pesos, bias)
-
-    processar_texto.pesos = pesos  # Armazena os pesos
-    processar_texto.bias = bias    # Armazena o bias
-    processar_texto.saida_neuronio = saida_neuronio # Armazena a saída
-
-    if saida_neuronio > 0.5:  # Limiar de ativação
-        if melhor_resposta:
-            return melhor_resposta
-        else:
-            return perguntar_ollama(texto)
+    elif intencao == "alfabeto":
+        return responder_sobre_alfabeto(texto)
     else:
-        return perguntar_ollama(texto)
+        return "Desculpe, não entendi. Pode reformular?"
 
-# Funções de visualização
+# Funções de visualização e monitoramento
 def obter_historico_rede():
     """Retorna o histórico dos dados da rede neural para visualização."""
     if not hasattr(obter_historico_rede, "historico"):
@@ -175,3 +210,24 @@ def obter_grafo_rede(num_neuronios=20):
                 grafo.add_edge(i, j, peso=np.random.random())
     return grafo
 
+# Função de feedback do usuário
+def feedback_usuario(resposta, satisfacao):
+    """Ajusta os pesos e o bias com base no feedback do usuário."""
+    if hasattr(processar_texto, "pesos") and hasattr(processar_texto, "bias"):
+        erro = 1 - satisfacao  # Erro é a diferença entre a satisfação máxima (1) e a satisfação do usuário
+        processar_texto.pesos, processar_texto.bias = ajustar_pesos(processar_texto.pesos, processar_texto.bias, erro)
+
+# Função para visualizar a frequência das letras
+def visualizar_frequencia_letras():
+    """Gera um gráfico de barras com a frequência das letras."""
+    letras = ler_tabela(TABELA_ALFABETO)
+    letras.sort(key=lambda x: int(x[2]), reverse=True)
+    
+    letras_nomes = [linha[0] for linha in letras]
+    frequencias = [int(linha[2]) for linha in letras]
+    
+    plt.bar(letras_nomes, frequencias)
+    plt.xlabel("Letras")
+    plt.ylabel("Frequência")
+    plt.title("Frequência das Letras no Texto")
+    plt.show()

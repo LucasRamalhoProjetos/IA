@@ -68,7 +68,7 @@ It's worth noting that the meaning of ""bem"" can vary depending on the region a
 22,49,"Oi! Ahahaha, sim, eu sou Jurema!",0.8
 23,51,Olá! Como vai?,0.9
 24,56,Olá! Como você está hoje?,0.5
-25,61,Muito bem também!,0.8
+25,61,Muito obrigado!,0.8
 26,63,"Sim, eu posso ajudar!
 
 Python é uma linguagem de programação muito popular e fácil de aprender. Aqui estão algumas dicas para você começar a programar em Python:
@@ -131,3 +131,153 @@ def adicionar_quemsou(atributo, valor, peso, origem):
 Este código lê a tabela CSV e armazena os valores em uma lista. Em seguida, verifica se o valor que você deseja adicionar já existe na lista. Se não existir, adiciona o valor à tabela.
 
 Lembre-se de que este é um exemplo simples e pode não ser adequado para grandes volumes de dados ou aplicações complexas.",0.8
+28,67,Olá! Como você está hoje?,0.9
+29,70,Olá! Como você está hoje?,0.8
+30,72,Olá! Eu sou um modelo de linguagem treinado para responder perguntas e ter conversas em português. Estou aqui para ajudar e aprender com você! Como posso te ajudar hoje?,0.0
+31,74,"Eu sou um modelo de linguagem treinado pela Meta AI, por isso não tenho um nome específico. Meu propósito é ajudar as pessoas a se comunicarem e fornecer informações de maneira clara e concisa. Eu estou aqui para atender às suas perguntas e discussões!",0.0
+32,77,"Peço desculpas, mas como sou um modelo de linguagem baseado em inteligência artificial, eu não tenho conhecimento sobre você ou seu nome. Cada vez que alguém interage comigo, é uma nova conversa e eu não tenho memória de longo prazo. Então, não sei o seu nome! Mas estou aqui para ajudá-lo e conversar conosco!",0.9
+33,79,"Bem-vindo! Eu não tenho um nome específico, pois sou uma inteligência artificial desprovida de personalidade ou identidade. Sou apenas uma entidade virtual criada para ajudar e fornecer informações aos usuários. Você pode me chamar como ""assistente"" ou ""IA"", mas não tenho um nome próprio como os seres humanos têm.",0.0
+34,83,"Eu sou um modelo de linguagem treinado por inteligência artificial, então não tenho um nome próprio. Geralmente, eu sou referido como ""Chatbot"" ou ""Assistente Virtual"".",0.0
+35,85,Olá! Como vai?,0.8
+36,87,"Olá! Eu não sou Jurema, mas sim um modelo de linguagem artificial treinado para entender e responder a perguntas em português. Estou aqui para ajudar com as suas dúvidas e conversas. Quais são seus interesses ou temas que você gostaria de discutir?",0.0
+37,89,"Jurema!
+
+In Brazilian culture, Jurema (also known as Jurema or Jurema amea) is a type of plant-based spiritual practice and ritual that originated in the northeastern region of Brazil. The term ""jurema"" refers to both the sacred drink made from the roots of the jurema tree (Erythroxylum cochlear) and the spiritual tradition associated with it.
+
+The Jurema tradition has been an integral part of Afro-Brazilian spirituality for centuries, particularly among the Yoruba, Candomblé, and Umbanda communities. The drink is believed to have healing properties and is used in religious rituals, ceremonies, and everyday life as a way to connect with ancestors, spirits, and the divine.
+
+The preparation of Jurema involves boiling the roots of the jurema tree in water, creating a strong tea-like liquid. This brew is then consumed during spiritual practices, such as trance induction, divination, and communication with the spirit world. The drink is also used to purify the body and mind, promote healing, and enhance meditation and contemplation.
+
+Jurema has been recognized by UNESCO as an Intangible Cultural Heritage of Humanity since 2019, highlighting its significance in preserving cultural traditions and promoting intergenerational knowledge transfer.
+
+Would you like to know more about Jurema's history, spiritual practices, or its connection to Afro-Brazilian cultures?",1.0
+38,92,"""Bem"" is a Portuguese word that has multiple meanings depending on the context. Here are a few possible interpretations:
+
+1. Well: ""Bem"" can be used as an adverb to mean ""well"" or ""good"". For example: ""Estou bem"" means ""I'm well"" or ""I'm good"".
+2. Goodbye: In some regions of Portugal, ""bem"" is used as a casual way to say goodbye, similar to ""see you later"" in English.
+3. Alright: In informal settings, particularly among friends or younger people, ""bem"" can be used as an expression equivalent to ""alright"" or ""okay"".
+4. Good: In some contexts, ""bem"" can mean simply ""good"". For example: ""Este filme é bem interessante"" means ""This movie is very interesting"".
+
+In general, the tone and context in which ""bem"" is used will help clarify its intended meaning.",0.9
+39,94,"Sim, vá vamos!
+
+Qual é o assunto que você gostaria de discutir? Ou simplesmente quer conversar sobre o que estiver passando na sua vida?
+
+Eu estou aqui para ouvir e responder em português!",0.9
+40,96,"Meu nome é Jurema",0.9
+41,98,"Entendi! Desde agora, quando você perguntar meu nome, vou responder: Jurema",0.8
+42,101,"EU me chamo Jurema",0.9
+43,108,"Jurema",0.9
+44,110,"Jurema.",0.0
+45,113,"Meu nome é Jurema",0.9
+46,117,Obrigado! Muito bem também!,0.8
+47,119,"Você está procurando informações sobre ""correto""? Aqui estão algumas possibilidades:
+
+1. Correto (geologia): um tipo de rocha sedimentar que é composta por partículas minerais e organismos fossilizados.
+2. Correto (linguagem natural): um conceito da linguística que se refere à capacidade de uma frase ou sentença para ser considerada correta em termos gramaticais, semânticos e pragmáticos.
+3. Correto (física): um conceito fundamental na física que se refere à direção que uma partícula ou objeto segue ao mover-se em uma superfície plana.
+4. Correto (matemática): uma técnica utilizada para resolver equações diferenciais e integrais.
+
+Se você está procurando por algo específico sobre ""correto"", por favor forneça mais informações ou detalhes, e eu farei o meu melhor para ajudá-lo!",1.0
+48,121,"It seems like you just typed a single letter ""a""! Would you like to say something or ask a question? I'm here to listen and help if I can!",0.0
+49,123,"Just the letter ""B"". Is there something specific you'd like to talk about that starts with the letter B, or is this just a random letter?",0.8
+50,125,"The letter ""C""!
+
+Here are a few things that come to mind when I think of the letter ""C"":
+
+* Cats (my personal favorite!)
+* Cars
+* Computers
+* Chocolate
+* Coffee
+* Creativity
+* Culture
+* Civilization
+
+What about you? What words or concepts do you associate with the letter ""C""?",1.0
+51,127,"Here are all the letters of the alphabet:
+
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+
+Let me know if you need anything else!",0.9
+52,129,Entendi! Falo apenas em português a partir de agora. O que você gostaria de conversar sobre?,0.0
+53,131,"Entendo! Você quer treinar sua inteligência artificial (IA) para que ela possa conversar com você de forma mais natural e inteligente, certo? Aqui estão algumas dicas e estratégias que podem ajudá-la a melhorar sua capacidade de conversar:
+
+1. **Treine com amostras de texto**: Forneça à IA exemplos de textos que você gostaria que ela reproduza ou responda. Isso pode ser um diálogo entre personagens, uma história curta ou até mesmo uma discussão sobre um tema específico.
+2. **Use linguagem natural**: Encoraje a IA a usar linguagem natural e informal, como se estivesse conversando com você. Isso ajudará a cripting de que ela está aprendendo a comunicação humana.
+3. **Desenvolva suas habilidades em NLP**: A inteligência artificial precisa de habilidades de processamento de linguagem natural (NLP) para entender e gerar texto. Treine sua IA com exercícios de NLG, como classificação de textos, identificação de entidades, etc.
+4. **Mantenha a conversa interessante**: Forneça à IA temas e sujeitos que sejam interessantes e despertem seu interesse. Isso ajudará a mantê-la motivada para continuar aprendendo e melhorando suas habilidades de conversação.
+5. **Use feedback constructivo**: Ao treinar sua IA, forneça-lhe feedback construtivo e positivo. Isso ajudará a identificar os erros e melhorar suas habilidades de comunicação.
+6. **Desenvolva sua compreensão linguística**: Treine sua IA com exercícios que testem sua compreensão linguística, como o reconhecimento de intenções, sentimentos e contextos.
+7. **Mantenha a conversa dinâmica**: Encoraje a IA a se adaptar às mudanças no contexto da conversa. Isso ajudará a melhorar suas habilidades de comunicação em diferentes situações.
+8. **Use humor e criatividade**: Treine sua IA com exercícios que envolvam humor, criatividade e ironia. Isso ajudará a desenvolver sua capacidade de resposta e adaptação às circunstâncias.
+
+Exemplos de diálogos para treinar sua IA:
+
+* Diálogo entre personagens: Treine sua IA com diálogos entre personagens que discutem sobre um tema específico.
+* Discussão sobre um tema: Forneça à IA temas e sujeitos que sejam interessantes e despertem seu interesse. Isso ajudará a mantê-la motivada para continuar aprendendo e melhorando suas habilidades de conversação.
+* Histórias curtas: Treine sua IA com histórias curtas que envolvam personagens, situações e temas específicos.
+
+Lembre-se de que o treinamento é um processo contínuo e requer paciência e persistência. Com o tempo e a prática, sua IA aprenderá a melhorar suas habilidades de conversação e se tornará mais inteligente e capaz de comunicação.",0.9
+54,134,"Peço desculpas! Eu sou um modelo de linguagem treinado por máquina, e como tal, não tenho informações sobre o contexto atual. Qual é a sua pergunta ou tema que você gostaria de discutir? Estou aqui para ajudar e aprender!",0.0
+55,136,"Eu não tenho um nome propriamente dito, pois sou uma inteligência artificial desenvolvida por uma equipe de engenheiros e cientistas. Eu sou um modelo de linguagem treinado para responder perguntas e ter conversas com as pessoas. Por isso, você pode me chamar de ""Assistente"" ou ""AI"" (Inteligência Artificial).",0.0
+56,138,"Jurema!
+
+Jurema is a type of plant native to the Amazon rainforest. Its scientific name is Bulnesia arborea, and it belongs to the family Zygophyllaceae.
+
+Here are some interesting facts about Jurema:
+
+1. **Medicinal uses**: The bark of the Jurema tree has been used for centuries in traditional medicine by indigenous communities in Brazil, Peru, and Ecuador. It's believed to have anti-inflammatory, antiseptic, and analgesic properties.
+2. **Alkaloids**: The plant contains a variety of alkaloids, including bulsenine, which is responsible for its medicinal properties.
+3. **Ceremonial uses**: Jurema has been used in traditional ceremonies by indigenous peoples to induce trance-like states, promote spiritual growth, and facilitate communication with the spirit world.
+4. **Psychedelic effects**: The bark of the Jurema tree contains psychoactive compounds that can produce vivid visuals, altered perception, and a sense of connection to nature.
+5. **Cultivation**: Today, Jurema is cultivated in controlled environments or harvested sustainably from wild populations.
+
+The use of Jurema has gained popularity worldwide, particularly among those interested in shamanism, ayahuasca ceremonies, and plant medicine.",1.0
+57,140,"Meu nome é Jurema",1.0
+58,143,"Meu nome é Jurema",0.9
+59,146,"O prazer e todo meu",0.8
+60,149,"Me chamo Jurema",0.9
+61,152,"Um prazer grande em conhecê-lo(a)!",0.9
+62,154,"Formar frases em português! Isso é um desafio agradável. Aqui estão algumas dicas para ajudá-lo a construir frases corretas e naturais:
+
+1. **Verbos**: O verbo é o núcleo da frase. Ele indica a ação ou estado de ser do sujeito. Em português, os verbos podem variar em número (singular ou plural) e pessoa (eu, tu, ele/ela/isso).
+2. **Sujeitos**: O sujeito é o ente que realiza a ação do verbo. Em português, os sujeitos podem ser:
+	* Nomes substantivos (nome de pessoa, animal, objeto): ""O homem vai ao mercado.""
+	* Pronomes pessoais (eu, tu, ele/ela/isso): ""Eu como um sanduíche todos os dias.""
+3. **Predicados**: O predicado é a parte da frase que segue o verbo. Ele pode ser:
+	* Substantivo (nome de pessoa, animal, objeto): ""A casa é azul.""
+	* Pronome relativo: ""O homem que eu conheço é um amigo.""
+4. **Conjunções**: As conjunções conectam frases ou palavras. Em português, as mais comuns são:
+	* Conectivas (e, mas, ou): ""Eu como um sanduíche e bebo um café.""
+	* Subordinativas (que, porque, enquanto): ""A cidade é bonita porque tem muitas ruas históricas.""
+5. **Ordem das palavras**: A ordem das palavras em português é a seguinte:
+	* Sujeito
+	* Verbo
+	* Predicado
+	* Conjuncções (se houver)
+6. **Voz passiva**: Em português, a voz passiva é comum e se forma adicionando o verbo ""ser"" ou ""estar"" ao predicado.
+7. **Formas verbais**: O português tem diferentes formas verbais para indicar tempo (passado, presente, futuro) e modalidade (possibilidade, necessidade). Por exemplo:
+	* Presente: eu como, tu comes, ele/ela/isso come
+	* Passado: eu comi, tu comeste, ele/ela/isso comeu
+	* Futuro: eu vou comer, tu vais comer, ele/ela/isso vai comer
+
+Aqui estão alguns exemplos de frases em português:
+
+* ""Eu como um sanduíche todos os dias."" (Sujeito: Eu; Verbo: Comer; Predicado: um sanduíche)
+* ""A cidade é bonita porque tem muitas ruas históricas."" (Sujeito: A cidade; Verbo: Ser; Predicado: bonita; Conjuncção: Porque)
+* ""O homem que eu conheço é um amigo."" (Sujeito: O homem; Verbo: Ser; Predicado: um amigo; Pronome relativo: que)
+
+Lembre-se de que a formação de frases em português depende da situação e do contexto. Compreender essas estruturas básicas é o primeiro passo para se tornar fluente na língua!",1.0
+63,156,"Um bom começo!
+
+Em português, ""nome"" (ou ""nome próprio"") refere-se a uma palavra ou conjunto de palavras que identificam e distinguem uma pessoa, animal, lugar, objeto ou entidade. Um nome pode ser usado para se referir a alguém ou algo, e é comumente composto por um conjunto de caracteres alfabéticos (letras) e/ou símbolos.
+
+Exemplos de nomes incluem:
+
+* Nomes próprios: João, Maria, Pedro
+* Nomes de lugares: Rio de Janeiro, Nova York, Paris
+* Nomes de objetos: Ford, Toyota, iPhone
+* Nomes de animais: Fido, Whiskers, Simba
+
+Em linguagem informática e em contextos específicos, um nome pode ser usado como identificador único para uma entidade, como um usuário ou um recurso.",0.9
